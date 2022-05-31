@@ -1,35 +1,34 @@
 /*----- constants -----*/
-const winningCombos = {
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+const winningCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7]
-}
+    [0, 4, 8],
+    [2, 4, 6]
+]
 
 /*----- app's state (variables) -----*/
 //let gameActive = true;
-let currPlayer = 'Z';
+let currPlayer = 1;
+//let board = [
+  //  [null, null, null],
+    //[null, null, null],
+    //[null, null, null],
+//]
+let board = [null, null, null, null, null, null, null, null, null];
 
 /*----- cached element references -----*/
-const square1 = document.getElementById('square1');
-const square2 = document.getElementById('square2');
-const square3 = document.getElementById('square3');
-const square4 = document.getElementById('square4');
-const square5 = document.getElementById('square5');
-const square6 = document.getElementById('square6');
-const square7 = document.getElementById('square7');
-const square8 = document.getElementById('square8');
-const square9 = document.getElementById('square9');
+const tttBoardEl = document.getElementById('ttt-board');
 const resetButton = document.getElementById('reset-game');
 
 
 /*----- event listeners -----*/
 //resetButton.addEventListener('click'. handleClick);
-//square1.addEventListener('click', handleClick);
+//tttBoardEl.addEventListener('click', handleClick);
+
 
 
 /*----- functions -----*/
@@ -45,4 +44,14 @@ const resetButton = document.getElementById('reset-game');
 
 //};
 
+// update currPlayer to change the turn
+//function changeTurn() {
 
+//}
+
+
+// attach an event listner to the board, figure out which square was clicked.
+// comsole.log to check which square was clicked
+// use info from square that was clicked to update the state
+// once all state has been updated rerender the DOM to reflect the changes in state.
+// make render function
