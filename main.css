@@ -7,7 +7,11 @@ h1 {
     text-align: center;
     color: orange;
     font-size: 50px;
-    
+    background: purple;
+    border-color: black;
+    border-style: dotted;
+    border-radius: 10px;
+    border-width: 5px;
 }
 
 #reset-game {
@@ -19,12 +23,12 @@ h1 {
 
 
 
-#square1, #square2, #square3, #square4, #square5,
-#square6, #square7, #square8, #square9 {
+#s0, #s1, #s2, #s3, #s4,
+#s5, #s6, #s7, #s8 {
     width: 80px;
     height: 80px;
     margin: auto;
-    border: 2px solid purple;
+    border: 2px solid black;
     border-radius: 6px;
     font-size: 30px;
     text-align: center;

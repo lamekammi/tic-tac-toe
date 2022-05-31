@@ -10,15 +10,23 @@ const winningCombos = [
     [2, 4, 6]
 ]
 
+const currPlayer = {
+  '1': 'player 1',
+  '-1': 'player 2',
+  'null': 'white',
+};
+
+
 /*----- app's state (variables) -----*/
 //let gameActive = true;
-let currPlayer = 1;
+
 //let board = [
   //  [null, null, null],
     //[null, null, null],
     //[null, null, null],
 //]
 let board = [null, null, null, null, null, null, null, null, null];
+let turn, winner;
 
 /*----- cached element references -----*/
 const tttBoardEl = document.getElementById('ttt-board');
@@ -26,17 +34,20 @@ const resetButton = document.getElementById('reset-game');
 
 
 /*----- event listeners -----*/
-//resetButton.addEventListener('click'. handleClick);
-//tttBoardEl.addEventListener('click', handleClick);
+resetButton.addEventListener('click', handleClick);
+tttBoardEl.addEventListener('click', handleClick);
 
-
+//console.log(tttBoardEl['Hello']);
 
 /*----- functions -----*/
-//function initGame() {
 
-//};
+function handleClick(tttBoardEl) {
+  console.log('clickkckck');
+}
 
-//function handClick() {
+function handleClick(resetButton) {
+  console.log('hellooo');
+}
 
 //}
 
@@ -48,7 +59,17 @@ const resetButton = document.getElementById('reset-game');
 //function changeTurn() {
 
 //}
+//function render() {
 
+//}
+
+
+function initialize() {
+  board = [null, null, null, null, null, null, null, null, null];
+  turn = 1;
+  winner = null;
+  render();
+}
 
 // attach an event listner to the board, figure out which square was clicked.
 // comsole.log to check which square was clicked
