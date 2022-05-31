@@ -10,16 +10,23 @@ h1 {
     
 }
 
-button {
+#reset-game {
     color: black;
     background: url('https://i.imgur.com/Yia2mRO.jpg');
     border-radius: 8px;
     padding: 10px;
 }
 
-.square {
+
+
+#square1, #square2, #square3, #square4, #square5,
+#square6, #square7, #square8, #square9 {
     width: 80px;
     height: 80px;
+    margin: auto;
+    border: 2px solid purple;
+    border-radius: 6px;
+    font-size: 30px;
+    text-align: center;
+
 }
-
-
