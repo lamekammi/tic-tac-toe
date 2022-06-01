@@ -19,7 +19,7 @@ const currPlayer = {
 
 /*----- app's state (variables) -----*/
 //let gameActive = true;
-
+let playerX = true;
 //let board = [
   //  [null, null, null],
     //[null, null, null],
@@ -31,34 +31,57 @@ let turn, winner;
 /*----- cached element references -----*/
 const tttBoardEl = document.getElementById('ttt-board');
 const resetButton = document.getElementById('reset-game');
-
-
+const squareElements = document.querySelectorAll('#square');
+const whosTurn = document.getElementById('turn');
 /*----- event listeners -----*/
-resetButton.addEventListener('click', handleClick);
-tttBoardEl.addEventListener('click', handleClick);
+resetButton.addEventListener('click', resetClickButton);
+//tttBoardEl.addEventListener('click', handleClick);
+
 
 //console.log(tttBoardEl['Hello']);
 
 /*----- functions -----*/
 
-function handleClick(tttBoardEl) {
-  console.log('clickkckck');
+function handleClick(squareClicked) {
+  if ( squareElements[squareClicked].innerHTML === '') {
+    changeTurn();
+  } else {
+    alert('THIS IS TAKEN BAKA');
+    return;
+  }
+  if ( playerX === true) {
+    squareElements[squareClicked].innerHTML = 'X';
+  } 
+  if ( playerX === false) {
+    squareElements[squareClicked].innerHTML = 'O';
+  } 
+
 }
 
-function handleClick(resetButton) {
-  console.log('hellooo');
-}
 
+for (let i = 0; i < squareElements.length; i++) {
+  squareElements[i].addEventListener('click', () => { handleClick(i)});
+}
 //}
 
-//function handleRestartGame() {
-
-//};
+function resetClickButton() {
+ playerX = true;
+ for (let i = 0; i < squareElements.length; i++) {
+   squareElements[i].innerHTML = '';
+ }
+ whosTurn.innerHTML = '';
+};
 
 // update currPlayer to change the turn
-//function changeTurn() {
+function changeTurn() {
+  playerX = !playerX;
+  if ( playerX ) {
+    whosTurn.innerHTML = "Player X's Turn!"
+  } else {
+    whosTurn.innerHTML = "Player O's Turn!"
+  }
 
-//}
+}
 //function render() {
 
 //}
