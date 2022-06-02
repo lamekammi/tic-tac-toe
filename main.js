@@ -10,21 +10,8 @@ const winningCombos = [
     [2, 4, 6]
 ]
 
-const currPlayer = {
-  '1': 'player 1',
-  '-1': 'player 2',
-  'null': 'white',
-};
-
-
 /*----- app's state (variables) -----*/
-//let gameActive = true;
 let playerX = true;
-//let board = [
-  //  [null, null, null],
-    //[null, null, null],
-    //[null, null, null],
-//]
 let board = [null, null, null, null, null, null, null, null, null];
 let turn, winner;
 
@@ -33,12 +20,9 @@ const tttBoardEl = document.getElementById('ttt-board');
 const resetButton = document.getElementById('reset-game');
 const squareElements = document.querySelectorAll('#square');
 const whosTurn = document.getElementById('turn');
+
 /*----- event listeners -----*/
 resetButton.addEventListener('click', resetClickButton);
-//tttBoardEl.addEventListener('click', handleClick);
-
-
-//console.log(tttBoardEl['Hello']);
 
 /*----- functions -----*/
 
@@ -62,7 +46,7 @@ function handleClick(squareClicked) {
 for (let i = 0; i < squareElements.length; i++) {
   squareElements[i].addEventListener('click', () => { handleClick(i)});
 }
-//}
+
 
 function resetClickButton() {
  playerX = true;
@@ -72,7 +56,6 @@ function resetClickButton() {
  whosTurn.innerHTML = '';
 };
 
-// update currPlayer to change the turn
 function changeTurn() {
   playerX = !playerX;
   if ( playerX ) {
@@ -82,16 +65,15 @@ function changeTurn() {
   }
 
 }
-//function render() {
-
-//}
-
 
 function initialize() {
   board = [null, null, null, null, null, null, null, null, null];
   turn = 1;
   winner = null;
-  render();
+}
+
+function checkForWins() {
+  //foreach loop
 }
 
 // attach an event listner to the board, figure out which square was clicked.

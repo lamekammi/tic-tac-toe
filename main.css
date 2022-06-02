@@ -7,11 +7,7 @@ h1 {
     text-align: center;
     color: orange;
     font-size: 50px;
-    background: purple;
-    border-color: black;
-    border-style: dotted;
-    border-radius: 10px;
-    border-width: 5px;
+   
 }
 
 #reset-game {
