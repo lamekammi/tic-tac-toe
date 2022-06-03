@@ -12,7 +12,11 @@ const winningCombos = [
 
 /*----- app's state (variables) -----*/
 let playerX = true;
-let board = [null, null, null, null, null, null, null, null, null];
+let board = [ 
+  [null, null, null], 
+  [null, null, null], 
+  [null, null, null]
+];
 let turn, winner;
 
 /*----- cached element references -----*/
@@ -21,63 +25,60 @@ const resetButton = document.getElementById('reset-game');
 const squareElements = document.querySelectorAll('#square');
 const whosTurn = document.getElementById('turn');
 
+
 /*----- event listeners -----*/
 resetButton.addEventListener('click', resetClickButton);
 
 /*----- functions -----*/
 
 function handleClick(squareClicked) {
-  if ( squareElements[squareClicked].innerHTML === '') {
+  if ( squareElements[squareClicked].textContent === '*') {
     changeTurn();
   } else {
-    alert('THIS IS TAKEN BAKA');
-    return;
+    return 
   }
   if ( playerX === true) {
-    squareElements[squareClicked].innerHTML = 'X';
+    squareElements[squareClicked].textContent = 'X';
   } 
   if ( playerX === false) {
-    squareElements[squareClicked].innerHTML = 'O';
+    squareElements[squareClicked].textContent = 'O';
   } 
 
 }
-
 
 for (let i = 0; i < squareElements.length; i++) {
   squareElements[i].addEventListener('click', () => { handleClick(i)});
 }
 
-
 function resetClickButton() {
  playerX = true;
  for (let i = 0; i < squareElements.length; i++) {
-   squareElements[i].innerHTML = '';
+   squareElements[i].textContent = '*';
  }
- whosTurn.innerHTML = '';
+ whosTurn.textContent = 'Click on a Square to Start the Game!';
 };
 
 function changeTurn() {
   playerX = !playerX;
   if ( playerX ) {
-    whosTurn.innerHTML = "Player X's Turn!"
+    whosTurn.textContent = "Player O's Turn!"
   } else {
-    whosTurn.innerHTML = "Player O's Turn!"
+    whosTurn.textContent = "Player X's Turn!"
   }
 
 }
 
 function initialize() {
-  board = [null, null, null, null, null, null, null, null, null];
-  turn = 1;
+  board = [ 
+  [null, null, null], 
+  [null, null, null], 
+  [null, null, null]
+];
   winner = null;
 }
 
 function checkForWins() {
-  //foreach loop
+  //foreach loop //includes
 }
 
-// attach an event listner to the board, figure out which square was clicked.
-// comsole.log to check which square was clicked
-// use info from square that was clicked to update the state
-// once all state has been updated rerender the DOM to reflect the changes in state.
-// make render function
+//
